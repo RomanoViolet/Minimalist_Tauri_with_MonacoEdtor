@@ -27,6 +27,7 @@ Ubuntu 22.04
         /workspaces/Minimalist_Tauri_with_MonacoEdtor/minimalist_example/src-tauri/target/release/bundle/appimage/minimalist-example_0.0.0_amd64.AppImage
    ```
 9. Open the **appimage** to open a window:
+
    ![alt text](image.png)
 
 ## Request
