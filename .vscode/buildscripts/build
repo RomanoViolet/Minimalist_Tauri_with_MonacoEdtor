@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#export alias ng='/workspaces/sw-architects-tools/node_modules/\@angular/cli/bin/ng'
+cd /workspaces/sw-architects-tools/Flow
+
+#source ~/.bashrc
+/workspaces/sw-architects-tools/Flow/node_modules/\@angular/cli/bin/ng lint \
+&& /workspaces/sw-architects-tools/Flow/node_modules/\@angular/cli/bin/ng build

@@ -1,0 +1,13 @@
+{
+  "printWidth": 120,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "trailingComma": "none",
+  "overrides": [
+    { "files": ".webpackrc", "options": { "parser": "json" } },
+    { "files": ".prettierrc", "options": { "parser": "json" } },
+    { "files": ".ts", "options": { "semi": false, "parser": "typescript" } }
+  ],
+  "ignorePatterns": ["**/node_modules/**", "**/dist/**", "**/build/**", "**/coverage/**", "**/public/**", "**/tsconfig.json"]
+}

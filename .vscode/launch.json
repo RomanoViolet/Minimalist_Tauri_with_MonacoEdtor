@@ -1,0 +1,69 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Launch Rust Debugger",
+      "program": "${workspaceFolder}/backend/target/debug/backend",
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Show Code Coverage",
+      "type": "chrome",
+      "request": "launch",
+      // "file": "file:///localhost:3000/backend/target/debug/coverage/index.html",
+	  // https://github.com/tauri-apps/tauri/discussions/5389
+      "file": "./backend/target/debug/coverage/index.html"
+    },
+	{
+      "type": "lldb",
+      "request": "launch",
+      "name": "Tauri Development Debug",
+      "cargo": {
+        "args": [
+          "build",
+          "--manifest-path=${workspaceFolder}/tauri-with-rust/src-tauri/Cargo.toml",
+          "--no-default-features"
+        ]
+      },
+      // task for the `beforeDevCommand` if used, must be configured in `.vscode/tasks.json`
+      "preLaunchTask": "Run Dev"
+    },
+	{
+      "name": "Front-end App Debug",
+      "type": "chrome",
+      "port": 5173,
+      "request": "launch",
+      "runtimeExecutable": "${workspaceFolder}/tauri-with-rust/src-tauri/target/debug/app", // Path to your app in debug mode.
+      // "useWebView": true,
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "Run Dev"
+    },  
+    {
+			"name": "Launch server",
+			"request": "launch",
+			"runtimeArgs": ["run-script", "dev"],
+			"runtimeExecutable": "npm",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node",
+			"console": "integratedTerminal"
+		},
+
+		{
+			"type": "chrome",
+			"request": "launch",
+			"name": "Launch Edge",
+			"url": "http://127.0.0.1:5173",
+			"webRoot": "${workspaceFolder}/tauri-with-rust",
+		}
+	],
+	"compounds": [
+		{
+			"name": "Both",
+			"configurations": ["Launch server", "Launch Edge"]
+		}
+
+  ]
+}

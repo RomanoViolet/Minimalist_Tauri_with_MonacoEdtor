@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#export alias ng='/workspaces/sw-architects-tools/node_modules/\@angular/cli/bin/ng'
+cd /workspaces/sw-architects-tools
+
+#source ~/.bashrc
+/workspaces/sw-architects-tools/node_modules/\@angular/cli/bin/ng lint \
+&& /workspaces/sw-architects-tools/node_modules/\@angular/cli/bin/ng build \
+&& /workspaces/sw-architects-tools/node_modules/\@angular/cli/bin/ng serve --open --port 3000 --watch true

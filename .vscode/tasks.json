@@ -1,0 +1,52 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Echo Environment Variables",
+      "type": "shell",
+      "linux": {
+        "command": "echo",
+        "args": [
+          "${workspaceFolder}"
+        ]
+      },
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Clean Old Build Artifacts",
+      "type": "shell",
+      "linux": {
+        "command": "${workspaceFolder}/.devcontainer/Tools/PostStartScripts/cleanup.sh",
+        "args": [
+          "${workspaceFolder}/minimalist_example"
+        ]
+      },
+      "problemMatcher": "$node-sass",
+      "group": "build",
+      "options": {
+        "cwd": "${workspaceFolder}/"
+      },
+    },
+    {
+      "label": "Build Window, Debug",
+      "type": "shell",
+      "dependsOn": [
+        // "Clean Old Build Artifacts"
+      ],
+      "linux": {
+        "command": "pnpm",
+        "args": [
+          "run",
+          "tauri",
+          "build",
+        ]
+      },
+      "problemMatcher": "$node-sass",
+      "group": "build",
+      "options": {
+        "cwd": "${workspaceFolder}/minimalist_example"
+      },
+    },
+  ]
+}

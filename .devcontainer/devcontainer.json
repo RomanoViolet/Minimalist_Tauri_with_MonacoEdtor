@@ -1,0 +1,93 @@
+{
+	"name": "MinimalistTauri",
+	"dockerFile": "Dockerfile",
+	"runArgs": [
+		"-u",
+		"dockeruser",
+		"--cap-add=SYS_PTRACE",
+		"--security-opt",
+		"seccomp=unconfined",
+		"--network=host",
+		"--ipc=host",
+		"--gpus=all"
+	],
+	"appPort": [
+		3000
+	],
+	"initializeCommand": "ls",
+	"postCreateCommand": [
+		"/bin/bash",
+		"-c",
+		"/workspaces/Minimalist_Tauri_with_MonacoEdtor/.devcontainer/Tools/PostStartScripts/CodeInContainerStartScripts.sh"
+	],
+	"customizations": {
+		"postCreateCommand": [
+			"/bin/bash",
+			"-c",
+			"/workspaces/Minimalist_Tauri_with_MonacoEdtor/.devcontainer/Tools/PostStartScripts/CodeInContainerStartScripts.sh"
+		],
+		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash",
+				"extensions.verifySignature": false
+			},
+			"extensions": [
+				"formulahendry.auto-close-tag",
+				"humao.rest-client",
+				"ritwickdey.LiveServer",
+				"vincaslt.highlight-matching-tag",
+				"byi8220.indented-block-highlighting",
+				"nabeelvalley.easyzoom",
+				"eamodio.gitlens",
+				"donjayamanne.githistory",
+				"gruntfuggly.todo-tree",
+				"mhutchie.git-graph",
+				"aaron-bond.better-comments",
+				"steoates.autoimport",
+				"stylemistake.auto-comment-blocks",
+				"rust-lang.rust-analyzer",
+				"serayuzgur.crates",
+				"bungcip.better-toml",
+				"JScearcy.rust-doc-viewer",
+				"ms-vscode.cpptools",
+				"vadimcn.vscode-lldb",
+				"TabNine.tabnine-vscode",
+				"rangav.vscode-thunder-client",
+				"GitHub.copilot",
+				"ryanluker.vscode-coverage-gutters",
+				"tamasfe.even-better-toml",
+				"GitHub.copilot-chat",
+				"pranaygp.vscode-css-peek",
+				"dbaeumer.vscode-eslint",
+				"christian-kohler.path-intellisense",
+				"firefox-devtools.vscode-firefox-debug",
+				"msjsdiag.debugger-for-chrome",
+				"formulahendry.auto-rename-tag",
+				"ms-vscode.vscode-typescript-next",
+				"esbenp.prettier-vscode",
+				"Mikael.Angular-BeastCode",
+				"pmneo.tsimporter",
+				"dskwrk.vscode-generate-getter-setter",
+				"johnpapa.angular2",
+				"ms-vscode.js-debug-nightly",
+				"eg2.vscode-npm-script",
+				"svelte.svelte-vscode",
+				"fivethree.vscode-svelte-snippets",
+				"ardenivanov.svelte-intellisense",
+				"vadimcn.vscode-lldb",
+				"rangav.vscode-thunder-client",
+				"humao.rest-client",
+				"vincaslt.highlight-matching-tag",
+				"byi8220.indented-block-highlighting",
+				"ms-vscode.vscode-typescript-next",
+				"gruntfuggly.todo-tree",
+				"aaron-bond.better-comments",
+				"steoates.autoimport",
+				"GitHub.copilot",
+				"WallabyJs.console-ninja",
+				"oderwat.indent-rainbow",
+				"VisualStudioExptTeam.vscodeintellicode"
+			]
+		}
+	}
+}
